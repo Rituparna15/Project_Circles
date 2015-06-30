@@ -1,0 +1,67 @@
+var data={
+        "name": "Parent node",
+	      "amount":"1000",
+
+      "children": [
+        {
+          "name": "Firstchild",
+	        "amount": "100",
+		
+              "children": [
+                
+		    {
+                  "name": "child1",
+                  "amount": "20"
+                },
+                {
+                  "name": "child2",
+                  "amount": "50"
+                },
+                {
+                  "name": "child3",
+                  "amount": "30"
+                }
+              		]
+            },
+
+            {
+              "name": "Secondchild",
+		          "amount":"400",
+
+              "children": [
+                {
+                  "name": "child1",
+                  "amount": "150"
+                },
+                {
+                  "name": "child2",
+                  "amount": "150"
+                },
+                {
+                  "name": "child3",
+                  "amount": "100"
+                }
+              		]
+            },
+
+          
+        {
+          "name": "Thirdchild",
+	        "amount":"500",          
+		
+                  "children": [
+                {
+                  "name": "child1",
+                  "amount": "200"
+                },
+                {
+                  "name": "child2",
+                  "amount": "100"
+                },
+                {
+                  "name": "child3",
+                  "amount": "200"
+                }
+              			]
+            }
+}
