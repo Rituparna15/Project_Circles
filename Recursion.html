@@ -1,0 +1,113 @@
+ <html>
+    
+    <head>
+        
+        <title>Circles</title>
+
+        <script type="text/javascript" src="raphael-min.js"> </script>
+
+    </head>
+        
+    <body> 
+
+        <script type="text/javascript">
+            //console.log('hi');
+            var data=
+            {
+
+                  //"name": "Parentnode",
+                  //"amount":"60",
+                  "children": [
+                    {
+                         "name": "Firstchild",
+                         "amount": "20",
+                                                    
+                    },
+
+                    {
+                          "name": "Secondchild",
+                          "amount":"15",
+                                                  
+                    },
+
+                  
+                    {
+                         "name": "Thirdchild",
+                         "amount":"30",          
+                
+                    }
+                ]
+            };
+
+                //alert(data.children.length);
+
+            var paper = Raphael(0, 0, 1000, 1000);
+
+            debugger;
+
+            paper.circle(500, 500, data.amount)
+                .attr("fill", "magenta")
+                .attr("stroke", "cyan");
+
+
+
+            var len = data.children.length;
+            
+            var i;
+            var x = 100, y = 100, r = 0 ;
+                                    
+            /*for(i = 0; i < len; i++)
+            {
+                r = data.children[i].amount;
+                x = x + 20;
+                y = y + 130;
+                drawcircle( x, y, r );
+                line( x, y );
+            }
+            debugger;*/
+
+                function traverse(data) 
+                {
+                    for ( var i in data) 
+                    {
+                    if ( data.children[i]) !== null && typeof( data.children[i] ) === "object") 
+                    {
+                    
+                    alert( i, data.children[i] ); debugger;   
+                    console.log( i, data.children[i] );
+                    r = data.children[i].amount;
+                    x = x + 20;
+                    y = y + 130;
+                    drawcircle( x, y, r );
+                    line( x, y );
+
+                    traverse( data.children[i] );
+                    }
+                    }
+                }
+                debugger;  
+
+                function drawcircle( x, y, r )
+                {
+                    paper.circle (x, y, r)
+                    .attr("fill","blue")
+                    .attr("stroke", "blue");
+                }
+
+
+                function line( x , y )
+                {
+                    paper.path("M500,500 150L" + x + " " + y)
+                    //paper.path("M500,500 L500,460" + x + " " + y)
+                    .attr("stroke", "black");
+                }
+     
+
+            
+        </script>
+
+       
+       
+             
+    </body>
+</html>
